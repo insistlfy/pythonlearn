@@ -1,6 +1,13 @@
+# !usr/bin/env python
+# -*- coding:utf-8 _*-
 """
- test
- @author lfy
- @date 2020/1/10 
+@author:lfy
+@file: test.py
+@time: 2020-01-10 下午12:28
+@description: test
 """
+
 print("Hello Python...")
+
+print("Hello")
+print("World")
