@@ -77,9 +77,11 @@ Tuple (元组)
 """
 _tuple = ('python', "PYTHON", 3000, 3000.0)
 _tuple1 = ('python',)  # 一个元素，需要在元素后添加逗号
+_tuple2 = 'hello', 'python'  # 可以不使用()
 emptyTuple = ()  # 空元组
 
-print('输出元组 : ', _tuple)
+print('输出元组_tuple : ', _tuple)
+print('输出元组_tuple2 : ', _tuple2)
 print('输出空元组 : ', emptyTuple)
 print('输出元组中第一个元素 : ', _tuple[0])
 print('\n=========================================\n')
