@@ -34,7 +34,12 @@ def city_country(city, country):
 
 
 def make_album(star, album):
-    return {star: album}
+    return {'star': star, 'album': album}
+
+
+def greet_users(users):
+    for i in users:
+        print('Hello,' + i.title())
 
 
 hello()
@@ -46,3 +51,5 @@ print(format_name_pro('john', 'lee', 'hooker'))
 print(city_country('西安', '中国'))
 
 print(make_album('周杰伦', '说散就散'))
+
+greet_users(['james', 'kobe', 'curry'])
