@@ -14,9 +14,7 @@
                     -- Python 3.2开始使用新的GIL,可以创建独立的进程来实现并行化
                ②CPU密集型(CPU-bound) : 也叫计算密集型
                ③IO密集型(I/O bound) :
-               ④Queue :
-               ⑤Pool :
-               ⑥创建多进程 :
+               ④创建多进程 :
                     -- 语法 : multiprocessing.Process(group=None, target=None, name=None, args=(), kwargs={})
                     -- 参数 :
                         - group：分组，实际上很少使用
@@ -24,8 +22,10 @@
                         - name：别名，相当于给这个进程取一个名字
                         - args：表示被调用对象的位置参数元组，比如target是函数a，他有两个参数m，n，那么args就传入(m, n)即可
                         - kwargs：表示调用对象的字典
+               ⑤进程池(Pool)
 """
 
+from multiprocessing import Pool
 import threading
 import multiprocessing
 import time
@@ -35,7 +35,7 @@ import time
 """
 
 
-def func_01(start, stop):
+def func(start, stop):
     print("感受单线程,多线程,多进程的执行效率")
 
     _list = []
@@ -57,8 +57,8 @@ if __name__ == '__main__':
     # 多线程添加
     thread_list = []
     start_time = time.time()
-    t1 = threading.Thread(target=func_01, args=(1, 50000000))
-    t2 = threading.Thread(target=func_01, args=(50000000, 100000001))
+    t1 = threading.Thread(target=func, args=(1, 50000000))
+    t2 = threading.Thread(target=func, args=(50000000, 100000001))
     thread_list.append(t1)
     thread_list.append(t2)
     # 启动线程
@@ -71,15 +71,15 @@ if __name__ == '__main__':
 
     # 单线程添加
     start_time = time.time()
-    func_01(1, 100000001)
+    func(1, 100000001)
     end_time = time.time()
     print("单线程用时:{}秒".format(end_time - start_time))
 
     # 多进程添加
     start_time = time.time()
     process_list = []
-    p1 = multiprocessing.Process(target=func_01, args=(1, 50000000))
-    p2 = multiprocessing.Process(target=func_01, args=(50000000, 100000001))
+    p1 = multiprocessing.Process(target=func, args=(1, 50000000))
+    p2 = multiprocessing.Process(target=func, args=(50000000, 100000001))
     process_list.append(p1)
     process_list.append(p2)
     p1.start()
@@ -88,3 +88,14 @@ if __name__ == '__main__':
         p.join()
     end_time = time.time()
     print("多进程用时:{}秒".format(end_time - start_time))
+
+    # 进程池
+    start_time = time.time()
+    pool = Pool(2)
+    num_list = [(1, 50000000), (50000000, 100000001)]
+    for num in num_list:
+        pool.apply_async(func, num)
+    pool.close()  # 等待所有子进程执行完毕关闭进程池
+    pool.join()  # 阻塞主进程,必须写在close()之后
+    end_time = time.time()
+    print("进程池-多进程用时:{}秒".format(end_time - start_time))
