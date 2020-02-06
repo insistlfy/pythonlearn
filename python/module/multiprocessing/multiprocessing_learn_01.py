@@ -87,4 +87,4 @@ if __name__ == '__main__':
     for p in process_list:
         p.join()
     end_time = time.time()
-    print("单线程用时:{}秒".format(end_time - start_time))
+    print("多进程用时:{}秒".format(end_time - start_time))
