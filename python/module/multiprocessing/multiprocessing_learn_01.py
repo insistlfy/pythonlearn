@@ -2,7 +2,7 @@
 # -*- coding:utf-8 _*-
 """
 @author:lfy
-@file: multiprocessing_learn.py
+@file: multiprocessing_learn_01.py
 @time: 2020-02-06 下午4:07
 @description: ① GIL全局解释器锁（Global Interpreter Lock）: 计算机程序设计语言解释器用于同步线程的工具，使得在同一进程内任何时刻仅有一个线程在执行。
                     -- Python的线程是操作系统线程。在Linux上为pthread，在Windows上为Win thread，完全由操作系统调度线程的执行。
