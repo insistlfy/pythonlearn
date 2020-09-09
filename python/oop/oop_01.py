@@ -21,6 +21,10 @@ class Student:
     def leave_school(self):
         print(self.__name.title() + " leave school...")
 
+    @staticmethod
+    def info_test(name, sex, weight):
+        print("My name is " + name + ",sex is " + sex + ",weight is " + weight + ".")
+
     # 获取属性
     def get_name(self):
         return self.__name
@@ -38,3 +42,5 @@ if __name__ == '__main__':
     student.set_name("James")
     print(student.get_name())
     print(student.sex)
+
+    Student.info_test("James", "M", "150")
