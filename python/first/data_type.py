@@ -127,3 +127,10 @@ print('输出字典_dic1的所有键 : ', _dic1.keys())
 print('输出字典_dic1的所有值 : ', _dic1.values())
 print('输出字典中键为name的值 : ', _dic1['name'])
 print('输出字典_dic2 : ', _dic2)
+
+'练习'
+print("----------------------------\n")
+print([1, 2, 3, "2"])  # 列表
+print((1, 2, 3, "3"))  # 元组
+print({1, 2, 3, 4, 4, "5"})  # 集合
+print({"1": "first", "2": "second"})  # 字典

@@ -11,8 +11,9 @@
 
 class Student:
 
-    def __init__(self, name):
+    def __init__(self, name, sex):
         self.__name = name
+        self.sex = sex
 
     def go_to_school(self):
         print(self.__name.title() + " go to school...")
@@ -30,9 +31,10 @@ class Student:
 
 
 if __name__ == '__main__':
-    student = Student("Curry")
+    student = Student("Curry", "M")
     student.go_to_school()
     student.leave_school()
 
     student.set_name("James")
     print(student.get_name())
+    print(student.sex)
