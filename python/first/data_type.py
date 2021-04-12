@@ -130,6 +130,8 @@ print('输出字典中键为name的值 : ', _dic1['name'])
 print('输出字典_dic2 : ', _dic2)
 _dic2['hello'] = 'world'
 print('在字典_dic2中添加数据 : ', _dic2)
+_dic2.pop('hello')
+print('在字典_dic2中删除数据 : ', _dic2)
 
 '练习'
 print("----------------------------\n")
