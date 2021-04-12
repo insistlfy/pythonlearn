@@ -123,10 +123,13 @@ _dic2 = {1: '1', 2: '2'}
 print('输出空字典 : ', _dic)
 print('输出字典_dic1 : ', _dic1)
 print('输出字典中键为1的值 : ', _dic1[1])
+print('输出字典中键为1的值 : ', _dic1.get(1))
 print('输出字典_dic1的所有键 : ', _dic1.keys())
 print('输出字典_dic1的所有值 : ', _dic1.values())
 print('输出字典中键为name的值 : ', _dic1['name'])
 print('输出字典_dic2 : ', _dic2)
+_dic2['hello'] = 'world'
+print('在字典_dic2中添加数据 : ', _dic2)
 
 '练习'
 print("----------------------------\n")
