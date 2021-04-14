@@ -12,6 +12,10 @@
 class Fruit:
     __slots__ = ("num", "price")  # 用tuple定义允许绑定的属性名称
 
+    @staticmethod
+    def show():
+        print('Fruit show...')
+
 
 class Apple(Fruit):
     # __slots__ = ("tot_cost",)

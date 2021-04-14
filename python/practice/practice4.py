@@ -37,4 +37,5 @@ def guess(maxValue=10, maxTimes=3):
         print(f'对不起，一共有{maxTimes}次机会，已使用完了，正确答案是{value}')
 
 
-guess(10, 3)
+if __name__ == '__main__':
+    guess(10, 3)
